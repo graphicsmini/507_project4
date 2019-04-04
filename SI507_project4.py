@@ -9,13 +9,10 @@ import pandas as pd
 
 ######
 
-# A "simple" example (without much fancy functionality or data processing)
 
 # Constants
 START_URL = "https://www.nps.gov/index.htm"
 FILENAME = "npc_cache.json"
-
-# So I can use 1 (one) instance of the Cache tool -- just one for my whole program, even though I'll get data from multiple places
 PROGRAM_CACHE = Cache(FILENAME)
 
 # assuming constants exist as such
@@ -30,10 +27,6 @@ def access_page_data(url):
 #######
 
 main_page = access_page_data(START_URL)
-
-# explore... find that there's a <ul> with class 'topics' and I want the links at each list item...
-
-# I've cached this so I can do work on it a bunch
 main_soup = BeautifulSoup(main_page, features="html.parser")
 # print(main_soup.prettify())
 #
@@ -102,11 +95,3 @@ for url in states_urls:
 
 npc_data = pd.DataFrame.from_dict(npc_dic)
 npc_data.to_csv('npc.csv')
-# topics_pages = [] # gotta get all the data in BeautifulSoup objects to work with...
-# for l in all_links:
-#     page_data = access_page_data(l['href'])
-    # soup_of_page = BeautifulSoup(page_data, features="html.parser")
-    # print(soup_of_page)
-    # topics_pages.append(soup_of_page)
-
-# print(topics_pages)
