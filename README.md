@@ -1,5 +1,5 @@
-**he project option I chose : OPTION 1**
-**My name : Youngmin Kim**
+### The project option I chose : OPTION 1
+### My name : Youngmin Kim
 
 
 # About this program
